@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmpasswordInputRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -73,6 +74,9 @@ const SignUp = () => {
             passwordInputRef.current.value = "";
 
             localStorage.setItem("idToken", data.idToken);
+            localStorage.setItem("email", data.email);
+
+            navigate("/welcome");
 
             console.log("User has successfully logged in", data);
           }
