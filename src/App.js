@@ -1,21 +1,32 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import SignUp from "./Components/SignUp";
 import ForgotPassword from "./Components/ForgotPassword";
-import Welcome from "./Components/Welcome";
+import RootLayout from "./RootLayout";
+import Inbox from "./Components/Inbox";
+import Sent from "./Components/Sent";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isLoggedIn = useSelector((state) => state.auth.isLogin);
+
   const routes = createBrowserRouter([
-    {
-      path: "/",
-      element: <SignUp />,
-    },
     {
       path: "/forgetPassword",
       element: <ForgotPassword />,
     },
     {
-      path: "/welcome",
-      element: <Welcome />,
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          path: "/",
+          element: isLoggedIn && <Inbox />,
+        },
+
+        {
+          path: "/sent",
+          element: isLoggedIn && <Sent />,
+        },
+      ],
     },
   ]);
 

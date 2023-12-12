@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { authActions } from "../Redux/auth";
 
 const SignUp = () => {
   const emailInputRef = useRef();
@@ -7,6 +9,7 @@ const SignUp = () => {
   const confirmpasswordInputRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -73,10 +76,8 @@ const SignUp = () => {
             emailInputRef.current.value = "";
             passwordInputRef.current.value = "";
 
-            localStorage.setItem("idToken", data.idToken);
-            localStorage.setItem("email", data.email);
-
-            navigate("/welcome");
+            dispatch(authActions.login({data}));
+            navigate("/");
 
             console.log("User has successfully logged in", data);
           }
