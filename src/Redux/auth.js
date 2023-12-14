@@ -22,7 +22,7 @@ const authSlice = createSlice({
       localStorage.setItem("email", data.email);
       localStorage.setItem("isLoggedIn", true);
     },
-    logout() {
+    logout(state) {
       state.token = "";
       state.isLogin = false;
       state.email = "";
