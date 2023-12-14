@@ -2,6 +2,9 @@ body {
   background: #edf1f5;
   margin-top: 20px;
 }
+.nav-spacing {
+  margin-right: 50px;
+}
 .card {
   position: relative;
   display: flex;
@@ -21,7 +24,7 @@ body {
 .mailbox-widget .custom-tab .nav-item .nav-link.active {
   background: 0 0;
   color: #fff;
-  border-bottom: 3px solid #2cd07e;
+  border-bottom: 5px solid #011109;
 }
 .no-wrap td,
 .no-wrap th {
