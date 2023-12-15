@@ -1,8 +1,17 @@
 import React from "react";
 import "./NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../Redux/auth";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logoutHandle = () => {
+    dispatch(authActions.logout());
+    navigate("/");
+  };
   return (
     <div className="row">
       <div className="col-md-12">
@@ -10,9 +19,9 @@ const NavBar = () => {
           <div className="card-body bg-primary text-white mailbox-widget pb-0">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h2 className="text-white">MailBox Client</h2>
-              <NavLink to="/logout" className="btn btn-dark">
+              <button className="btn btn-dark" onClick={logoutHandle}>
                 Logout
-              </NavLink>
+              </button>
             </div>
 
             <ul

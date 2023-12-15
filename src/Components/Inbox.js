@@ -85,7 +85,15 @@ const Inbox = () => {
                 <span className="mb-0 text-muted">{mail.from}</span>
               </td>
               <td>
-                <Button variant="link" onClick={() => handleShow(mail)}>
+                <Button
+                  variant="link"
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => handleShow(mail)}
+                >
                   {mail.subject}
                 </Button>
               </td>

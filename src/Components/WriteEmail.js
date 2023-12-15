@@ -30,7 +30,6 @@ const SendEmail = () => {
       }
     );
 
-    
     const response2 = await fetch(
       `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${cleaned_email_To}/inbox.json`,
       {
@@ -66,6 +65,12 @@ const SendEmail = () => {
       // Convert the editorState to raw content
       editorState: editorText,
     };
+
+    setTo("");
+    setSubject("");
+    setEditorState(EditorState.createEmpty());
+
+    alert("Email Sent Successfully!");
 
     // Now you can send emailData to your server or perform any desired action.
     console.log("Email Data:", emailData);
