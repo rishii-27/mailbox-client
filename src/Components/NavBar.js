@@ -1,12 +1,14 @@
 import React from "react";
 import "./NavBar.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../Redux/auth";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const inbox = useSelector((state) => state.inbox.inbox);
+  const sent = useSelector((state) => state.sent.sent);
 
   const logoutHandle = () => {
     dispatch(authActions.logout());
@@ -36,12 +38,12 @@ const NavBar = () => {
               </li>
               <li className="nav-item nav-spacing">
                 <NavLink to="/" className="nav-link ml-2">
-                  INBOX
+                  INBOX ({inbox.length})
                 </NavLink>
               </li>
               <li className="nav-item nav-spacing">
                 <NavLink to="/sent" className="nav-link ml-2">
-                  SENT
+                  SENT ({sent.length})
                 </NavLink>
               </li>
             </ul>

@@ -73,7 +73,7 @@ const Inbox = () => {
       <table className="table email-table no-wrap table-hover v-middle mb-0 font-14">
         <thead>
           <tr>
-            <th>From</th>
+            <th>Received From</th>
             <th>Subject</th>
             <th>Action</th>
           </tr>
@@ -119,7 +119,10 @@ const Inbox = () => {
           >
             <Modal.Header closeButton>
               <Modal.Title>
-                <b>From: {selectedData.from}</b>
+                Sender: <span></span>
+                <u>
+                  <span>{selectedData.from}</span>
+                </u>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>{selectedData.message}</Modal.Body>
