@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { authActions } from "../Redux/auth";
+import { authActions } from "../../Redux/auth";
 
 const SignUp = () => {
   const emailInputRef = useRef();

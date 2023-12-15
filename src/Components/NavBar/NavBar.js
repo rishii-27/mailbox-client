@@ -2,9 +2,9 @@ import React from "react";
 import "./NavBar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { authActions } from "../Redux/auth";
-import { inboxActions } from "../Redux/inbox";
-import { sentActions } from "../Redux/sent";
+import { authActions } from "../../Redux/auth";
+import { inboxActions } from "../../Redux/inbox";
+import { sentActions } from "../../Redux/sent";
 import NavDataFetch from "./NavDataFetch";
 
 const NavBar = () => {
@@ -21,8 +21,8 @@ const NavBar = () => {
     `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/send.json`
   );
 
-  console.log(inboxCount);
-  console.log(sendCount);
+  // console.log(inboxCount);
+  // console.log(sendCount);
 
   const logoutHandle = () => {
     dispatch(authActions.logout());

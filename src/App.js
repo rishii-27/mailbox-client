@@ -1,5 +1,5 @@
 import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
-import ForgotPassword from "./Components/ForgotPassword";
+import ForgotPassword from "./Components/Authentication/ForgotPassword";
 import RootLayout from "./RootLayout";
 import Inbox from "./Components/Inbox";
 import Sent from "./Components/Sent";
