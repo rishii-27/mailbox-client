@@ -11,14 +11,21 @@ const inboxSlice = createSlice({
       const mailIsPresent = state.inbox.find((mail) => mail.id === newMail.id);
 
       if (mailIsPresent) {
-        return;
+        // If the mail is already present, update its properties
+        state.inbox = state.inbox.map((mail) =>
+          mail.id === newMail.id ? { ...mail, ...newMail } : mail
+        );
       } else {
-        state.inbox.push(action.payload);
+        // If the mail is not present, add it to the inbox
+        state.inbox.push(newMail);
       }
     },
     deleteFromInbox(state, action) {
       const id = action.payload;
       state.inbox = state.inbox.filter((mail) => mail.id !== id);
+    },
+    clearInbox(state) {
+      state.inbox = [];
     },
   },
 });

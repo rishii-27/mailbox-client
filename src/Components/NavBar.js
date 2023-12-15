@@ -3,6 +3,7 @@ import "./NavBar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../Redux/auth";
+import { inboxActions } from "../Redux/inbox";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const NavBar = () => {
 
   const logoutHandle = () => {
     dispatch(authActions.logout());
+    dispatch(inboxActions.clearInbox());
     navigate("/");
   };
   return (
