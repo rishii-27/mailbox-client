@@ -1,33 +1,19 @@
 import React from "react";
-import "./NavBar.css";
+import "../NavBar/NavBar.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { authActions } from "../../Redux/auth";
+import { useDispatch, useSelector } from "react-redux";
 import { inboxActions } from "../../Redux/inbox";
-import { sentActions } from "../../Redux/sent";
-import NavDataFetch from "./NavDataFetch";
+import { authActions } from "../../Redux/auth";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const clean_UserEmail = localStorage
-    .getItem("email")
-    .replace("@", "")
-    .replace(".", "");
-
-  const [inboxCount, sendCount] = NavDataFetch(
-    `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox.json`,
-    `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/send.json`
-  );
-
-  // console.log(inboxCount);
-  // console.log(sendCount);
+  const inbox = useSelector((state) => state.inbox.inbox);
+  const sent = useSelector((state) => state.sent.sent);
 
   const logoutHandle = () => {
     dispatch(authActions.logout());
     dispatch(inboxActions.clearInbox());
-    dispatch(sentActions.clearSent());
     navigate("/");
   };
   return (
@@ -54,12 +40,12 @@ const NavBar = () => {
               </li>
               <li className="nav-item nav-spacing">
                 <NavLink to="/" className="nav-link ml-2">
-                  INBOX ({inboxCount})
+                  INBOX ({inbox.length})
                 </NavLink>
               </li>
               <li className="nav-item nav-spacing">
                 <NavLink to="/sent" className="nav-link ml-2">
-                  SENT ({sendCount})
+                  SENT ({sent.length})
                 </NavLink>
               </li>
             </ul>
