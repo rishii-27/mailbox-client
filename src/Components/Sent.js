@@ -49,7 +49,7 @@ const Sent = () => {
     };
 
     fetchSent();
-  }, []);
+  }, [dispatch, clean_UserEmail]);
 
   return (
     <div className="table-responsive mt-3">

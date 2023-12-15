@@ -122,7 +122,7 @@ const SendEmail = () => {
             />
           </div>
           <div>
-            <button className="btn btn-primary" onClick={sendEmail}>
+            <button className="btn btn-primary mt-2" onClick={sendEmail}>
               Send
             </button>
           </div>
