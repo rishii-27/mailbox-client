@@ -16,6 +16,9 @@ const sentSlice = createSlice({
         state.sent.push(action.payload);
       }
     },
+    clearSent(state) {
+      state.sent = [];
+    },
   },
 });
 
