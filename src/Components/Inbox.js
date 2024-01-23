@@ -64,7 +64,7 @@ const Inbox = () => {
     };
 
     fetchInbox();
-  }, []);
+  }, [clean_UserEmail, dispatch]);
 
   const handleDelete = async (id) => {
     const response = await fetch(
