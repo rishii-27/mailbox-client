@@ -41,7 +41,7 @@ const Inbox = () => {
   useEffect(() => {
     const fetchInbox = async () => {
       const response = await fetch(
-        `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox.json`,
+        `https://mailbox-5f82a-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox.json`,
         {
           method: "GET",
         }
@@ -68,7 +68,7 @@ const Inbox = () => {
 
   const handleDelete = async (id) => {
     const response = await fetch(
-      `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox/${id}.json`,
+      `https://mailbox-5f82a-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox/${id}.json`,
       {
         method: "DELETE",
       }
@@ -80,7 +80,7 @@ const Inbox = () => {
 
   const updateMessageReadStatus = async (id, isRead) => {
     const response = await fetch(
-      `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox/${id}.json`,
+      `https://mailbox-5f82a-default-rtdb.firebaseio.com/${clean_UserEmail}/inbox/${id}.json`,
       {
         method: "PATCH",
         headers: {

@@ -18,7 +18,7 @@ const SendEmail = () => {
     const cleaned_email_To = to.replace(".", "").replace("@", "");
 
     const response1 = await fetch(
-      `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${cleaned_email_From}/send.json`,
+      `https://mailbox-5f82a-default-rtdb.firebaseio.com/${cleaned_email_From}/send.json`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -31,7 +31,7 @@ const SendEmail = () => {
     );
 
     const response2 = await fetch(
-      `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${cleaned_email_To}/inbox.json`,
+      `https://mailbox-5f82a-default-rtdb.firebaseio.com/${cleaned_email_To}/inbox.json`,
       {
         method: "POST",
         body: JSON.stringify({

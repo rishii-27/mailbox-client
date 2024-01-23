@@ -29,7 +29,8 @@ const SignUp = () => {
     if (!isLogin) {
       if (enteredPassword === enteredConfirmPassword) {
         fetch(
-          `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD1K-dIUqrst1fC86i8auiSHQMxoS666h4`,
+          `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDB9sJXQnrF4L1Rc-wgk2Oqx7BqsN42eBI
+          `,
           {
             method: "POST",
             body: JSON.stringify({
@@ -58,7 +59,7 @@ const SignUp = () => {
       }
     } else {
       fetch(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD1K-dIUqrst1fC86i8auiSHQMxoS666h4`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDB9sJXQnrF4L1Rc-wgk2Oqx7BqsN42eBI`,
         {
           method: "POST",
           body: JSON.stringify({

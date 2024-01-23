@@ -27,7 +27,7 @@ const Sent = () => {
   useEffect(() => {
     const fetchSent = async () => {
       const response = await fetch(
-        `https://mailbox-client-a1bb4-default-rtdb.firebaseio.com/${clean_UserEmail}/send.json`,
+        `https://mailbox-5f82a-default-rtdb.firebaseio.com/${clean_UserEmail}/send.json`,
         {
           method: "GET",
         }

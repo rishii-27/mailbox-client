@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyD1K-dIUqrst1fC86i8auiSHQMxoS666h4`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDB9sJXQnrF4L1Rc-wgk2Oqx7BqsN42eBI`,
         {
           method: "POST",
           body: JSON.stringify({
