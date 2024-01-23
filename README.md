@@ -4,6 +4,8 @@
 
 Welcome to MailBox Client, a robust email application developed with React. Users can sign up, log in, and seamlessly send and receive emails. This app utilizes Firebase for user authentication, email storage, and Redux for state management. A visually appealing badge status indicates whether inbox messages are read or unread, with status stored in Firebase Realtime Database.
 
+🚀 **Live Demo:** [Mailbox Client](https://mailboxx-client.netlify.app/) 🌐
+
 ## Features
 
 - **User Authentication:**
